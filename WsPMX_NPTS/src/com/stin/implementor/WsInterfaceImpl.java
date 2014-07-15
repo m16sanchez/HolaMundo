@@ -4,8 +4,6 @@ package com.stin.implementor;
 
 import javax.jws.WebService;
 
-import com.stin.CatActividades;
-import com.stin.Perforacion;
 import com.stin.WsInterface;
 import com.stin.DAO.GenericDao;
 import com.stin.dbaccess.IntervencionDAO;
