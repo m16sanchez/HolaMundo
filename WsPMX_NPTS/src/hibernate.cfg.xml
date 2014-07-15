@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+        <property name="hibernate.connection.password">stin2014</property>
+        <property name="hibernate.connection.url">jdbc:jtds:sqlserver://localhost:1433/NPTSPRUEBAS</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.default_catalog">NPTSPRUEBAS</property>
+        <property name="hibernate.default_schema">dbo</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.jdbc.batch_size">15</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.show_sql">false</property>
+        <mapping resource="com/stin/CatNptsN4.hbm.xml" />
+        <mapping resource="com/stin/CatNptsN3.hbm.xml" />
+        <mapping resource="com/stin/Operacion.hbm.xml" />
+        <mapping resource="com/stin/CatActividades.hbm.xml" />
+        <mapping resource="com/stin/CatNptsN2.hbm.xml" />
+        <mapping resource="com/stin/CatNptsN1.hbm.xml" />
+        <mapping resource="com/stin/Herramienta.hbm.xml" />
+        <mapping resource="com/stin/Tr.hbm.xml" />
+        <mapping resource="com/stin/Perforacion.hbm.xml" />
+        <mapping resource="com/stin/Programas.hbm.xml" />
+        <mapping resource="com/stin/CatEquipo.hbm.xml" />
+        <mapping resource="com/stin/Ctr.hbm.xml" />
+        <mapping resource="com/stin/Pozo.hbm.xml" />
+        <mapping resource="com/stin/Usuarios.hbm.xml" />
+        <mapping resource="com/stin/MigracionNptsdbs.hbm.xml" />
+        <mapping resource="com/stin/Profundidad.hbm.xml" />
+        <mapping resource="com/stin/CatIntervencion.hbm.xml" />
+        <mapping resource="com/stin/Rma.hbm.xml" />
+        <mapping resource="com/stin/CatPlataforma.hbm.xml" />
+        <mapping resource="com/stin/Barrena.hbm.xml" />
+        <mapping resource="com/stin/CatCompania.hbm.xml" />
+        <mapping resource="com/stin/Nucleo.hbm.xml" />
+        <mapping resource="com/stin/Intervencion.hbm.xml" />
+        <mapping resource="com/stin/CatEtapa.hbm.xml" />
+        <mapping resource="com/stin/CatTr.hbm.xml" />
+        <mapping resource="com/stin/CatSubIntervencion.hbm.xml" />
+        <mapping resource="com/stin/Siop.hbm.xml" />
+        <mapping resource="com/stin/NptIntervencion.hbm.xml" />
+        <mapping resource="com/stin/Lodo.hbm.xml" />
+        <mapping resource="com/stin/Terminacion.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>
