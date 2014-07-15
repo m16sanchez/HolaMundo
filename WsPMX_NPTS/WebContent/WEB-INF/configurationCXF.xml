@@ -51,11 +51,11 @@
 	<import resource="classpath:/META-INF/cxf/cxf-servlet.xml"/>
 		
 
-	<bean id="WsInterfaceImpl" class="com.stin.implementor.WsInterfaceImpl"/>
+	<bean id="WsInterfaceImpls" class="com.stin.implementor.WsInterfaceImpl"/>
 
 	<jaxws:endpoint 
 		id="jaxwsService"
-		implementor="#WsInterfaceImpl"
+		implementor="#WsInterfaceImpls"
 		address="/ws">
 		<jaxws:binding>
 			<soap:soapBinding version="1.1" mtomEnabled="false" />
