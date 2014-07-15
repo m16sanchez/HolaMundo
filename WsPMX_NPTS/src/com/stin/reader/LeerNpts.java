@@ -288,21 +288,6 @@ public class LeerNpts {
 
                         }
                     }
-/*                  
-                    for (int ii = 0; ii < npts.size(); ii++) {
-                        //if (((Npt) npts.get(i)).getIdNpt() == 0) {
-                        System.out.println("Consecutivo " + ((Npt) npts.get(ii)).getConsecutivo()
-                                + " , FECHA " + ((Npt) npts.get(ii)).getFecha()
-                                + " , PROFUNDIDAD " + ((Npt) npts.get(ii)).getProfundidad()
-                                + " , IDNPTINTERVERNCION " + ((Npt) npts.get(ii)).getIdNptIntervencion()
-                                + ", TIEMPO " + ((Npt) npts.get(ii)).getTiempo()
-                                + ", INTERVENCION " + ((Npt) npts.get(ii)).getIntervencion()
-                                + "detalle " + ((Npt) npts.get(ii)).getStrDetalle()
-                                + "etapa " + ((Npt)npts.get(ii)).getEtapa()  
-                                + "TR " + ((Npt)npts.get(ii)).getTr());
-                        //}
-                    }
-*/  
                   
                     break; // para que no siga recorriendo las hojas de excel
 
@@ -323,7 +308,22 @@ public class LeerNpts {
             npts.add(new Npt(0, error, -100, "0", reportFila + 1, reportColumna + 1, "", "ERROR ", ""));
         }
         
-        System.out.println("NUMERO DEL ERROR: " + error);
+        for (int ii = 0; ii < npts.size(); ii++) {
+            //if (((Npt) npts.get(i)).getIdNpt() == 0) {
+            System.out.println("Consecutivo " + ((Npt) npts.get(ii)).getConsecutivo()
+                    + " , FECHA " + ((Npt) npts.get(ii)).getFecha()
+                    + " , PROFUNDIDAD " + ((Npt) npts.get(ii)).getProfundidad()
+                    + " , IDNPTINTERVERNCION " + ((Npt) npts.get(ii)).getIdNptIntervencion()
+                    + ", TIEMPO " + ((Npt) npts.get(ii)).getTiempo()
+                    + ", INTERVENCION " + ((Npt) npts.get(ii)).getIntervencion()
+                    + "detalle " + ((Npt) npts.get(ii)).getStrDetalle()
+                    + "etapa " + ((Npt)npts.get(ii)).getEtapa()  
+                    + "TR " + ((Npt)npts.get(ii)).getTr());
+            //}
+        }
+
+        
+        
         //System.exit(0); 
         return npts;
     }
@@ -331,19 +331,20 @@ public class LeerNpts {
     
 	// METODOS PARA TRATAR LOS NPTS
 	
-	int ultimoConse;
-	public List<Npt>getListNpts(String excelName, int index,String textBuscar,int tipo,boolean visualiza,int idSubInter){
+	//int ultimoConse;
+	public static List<Npt>getListNpts(String excelName, int index,String textBuscar,int tipo,boolean visualiza,int idSubInter){
         int intervencion =IntervencionDAO.searchIntervencionByTipoAndPozo(index,tipo,idSubInter);
         System.out.println("INTERVENCION: " + intervencion + " IDPOZO= " + index + " INTER: " +tipo);        
         try {
-        	ultimoConse = 0;//PerforacionDAO.searchPerfConseByInter(intervencion, tipo);//es el id de la intervencion
+        	//ultimoConse = 0;//PerforacionDAO.searchPerfConseByInter(intervencion, tipo);//es el id de la intervencion
         } 
         catch (Exception e) {
         }
-        List<Npt>lista=leerExcelNPT(excelName,index,intervencion,tipo,textBuscar,visualiza,ultimoConse); // Intervencion es el id                                
+        System.out.println("LLAMADO::::");
+        List<Npt>lista=leerExcelNPT(excelName,index,intervencion,tipo,textBuscar,visualiza,0/*ultimoConsecutivo*/); // Intervencion es el id                                
         return lista;
     }
-	//
+	// FIN METODOS PARA TRATAR LOS NPTS
 	
 	
 	

@@ -55,7 +55,7 @@ public class WsInterfaceImpl implements WsInterface {
 			int intervencion, int tipoIntervencion, String interBuscar,
 			boolean visualiza, int ultimoConse) {
 		// TODO Auto-generated method stub
-		LeerNpts.leerExcelNPT(archivoDestino, idPozo, intervencion, tipoIntervencion, interBuscar, visualiza, ultimoConse);
+		LeerNpts.getListNpts(archivoDestino, idPozo, interBuscar, intervencion, visualiza, tipoIntervencion);
 		return false;
 	}
 
