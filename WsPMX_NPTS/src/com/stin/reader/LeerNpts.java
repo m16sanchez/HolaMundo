@@ -331,17 +331,17 @@ public class LeerNpts {
     
 	// METODOS PARA TRATAR LOS NPTS
 	
-	//int ultimoConse;
+	static int  ultimoConse;
 	public static List<Npt>getListNpts(String excelName, int index,String textBuscar,int tipo,boolean visualiza,int idSubInter){
         int intervencion =IntervencionDAO.searchIntervencionByTipoAndPozo(index,tipo,idSubInter);
         System.out.println("INTERVENCION: " + intervencion + " IDPOZO= " + index + " INTER: " +tipo);        
         try {
-        	//ultimoConse = 0;//PerforacionDAO.searchPerfConseByInter(intervencion, tipo);//es el id de la intervencion
+        	ultimoConse = PerforacionDAO.searchPerfConseByInter(intervencion, tipo);//es el id de la intervencion
         } 
         catch (Exception e) {
         }
         System.out.println("LLAMADO::::");
-        List<Npt>lista=leerExcelNPT(excelName,index,intervencion,tipo,textBuscar,visualiza,0/*ultimoConsecutivo*/); // Intervencion es el id                                
+        List<Npt>lista=leerExcelNPT(excelName,index,intervencion,tipo,textBuscar,visualiza,ultimoConse); // Intervencion es el id                                
         return lista;
     }
 	// FIN METODOS PARA TRATAR LOS NPTS
